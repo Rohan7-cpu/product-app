@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useProductStore } from '../store/useProductStore';
-import { PackageSearch, Lock, User, LogIn } from 'lucide-react';
+import { PackageSearch, Lock, User, LogIn, Sparkles, Copy, Check } from 'lucide-react';
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -17,9 +17,21 @@ export const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [copied, setCopied] = useState(false);
 
+  // Quick auto-fill handler
+  const handleAutoFill = () => {
+    setUsername(defaultCredentials.username);
+    setPassword(defaultCredentials.password);
+    setError('');
+  };
 
-  
+  // Copy JSON credentials handler
+  const handleCopyJSON = () => {
+    navigator.clipboard.writeText(JSON.stringify(defaultCredentials, null, 2));
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -113,6 +125,36 @@ export const LoginPage = () => {
 
           </form>
 
+          {/* JSON Default Credentials Box Section */}
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-amber-500" /> Default Credentials (JSON)
+              </span>
+              <button
+                type="button"
+                onClick={handleCopyJSON}
+                className="text-[11px] font-semibold text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1"
+              >
+                {copied ? <Check className="w-3 h-3 text-emerald-500" /> : <Copy className="w-3 h-3" />}
+                <span>{copied ? 'Copied!' : 'Copy JSON'}</span>
+              </button>
+            </div>
+
+            {/* JSON Code Viewer */}
+            <div className="relative bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono border border-slate-800 overflow-x-auto shadow-inner">
+              <pre>{JSON.stringify(defaultCredentials, null, 2)}</pre>
+            </div>
+
+            {/* Auto-fill Button */}
+            <button
+              type="button"
+              onClick={handleAutoFill}
+              className="w-full py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition-colors"
+            >
+              ✨ Click to Auto-fill Demo Credentials
+            </button>
+          </div>
 
         </div>
 
