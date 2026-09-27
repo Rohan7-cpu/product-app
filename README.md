@@ -4,15 +4,15 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?logo=tailwind-css)
 ![Zustand](https://img.shields.io/badge/State_Management-Zustand-purple)
-![Vercel](https://img.shields.io/badge/Deployment-Vercel_Ready-black?logo=vercel)
+![Vercel](https://img.shields.io/badge/Deployment-Vercel_Live-brightgreen?logo=vercel)
 
 A production-minded, fully responsive **Product Management Dashboard** built with **React** and **JavaScript** for the Technical Hiring Assignment. The application integrates with the public [DummyJSON Products API](https://dummyjson.com/products) to allow users to browse, search, filter, sort, view details, and dynamically add products with global state management, performance optimizations, multi-currency support, and bonus features.
 
 ---
 
-## 🌟 Live Demo & Repository
-- **GitHub Repository**: [https://github.com/Rohan7-cpu/product-app.git](https://github.com/Rohan7-cpu/product-app.git)
-- **Deployment**: Configured for 1-click deployment on [Vercel](https://vercel.com) via `vercel.json`.
+## 🌐 Live Links & Repository
+- 🔗 **Live Vercel Deployment**: [https://product-app-alpha-nine.vercel.app](https://product-app-alpha-nine.vercel.app)
+- 📁 **GitHub Repository**: [https://github.com/Rohan7-cpu/product-app.git](https://github.com/Rohan7-cpu/product-app.git)
 
 ---
 
@@ -83,6 +83,7 @@ A production-minded, fully responsive **Product Management Dashboard** built wit
 | **Tailwind CSS** | Styling | Rapid utility-first styling with built-in dark mode support |
 | **Lucide Icons** | UI Icons | Clean, modern vector icons |
 | **DummyJSON API** | Backend API | Public REST API for product data integration |
+| **Vercel** | Live Hosting | Automatic CI/CD deployment with `vercel.json` SPA rewrites |
 
 ---
 
@@ -172,13 +173,8 @@ product-dash/
 
 ---
 
-## 🚀 Deploying to Vercel
-
-This repository includes a pre-configured `vercel.json` file for single page application (SPA) client-side routing.
-
-1. Go to **[vercel.com/new](https://vercel.com/new)**.
-2. Select your repository: **`Rohan7-cpu/product-app`**.
-3. Click **Deploy**. Vercel will automatically build and deploy your live site.
+## 🚀 Live Deployment
+- **Live Vercel Application**: [https://product-app-alpha-nine.vercel.app](https://product-app-alpha-nine.vercel.app)
 
 ---
 
